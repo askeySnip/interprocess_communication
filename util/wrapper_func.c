@@ -1,6 +1,3 @@
-#ifndef WRAPPER_FUNC_H_
-#define WRAPPER_FUNC_H_
-
 #include "../header/myerror.h"
 
 void
@@ -49,4 +46,22 @@ Read(int fd, void* buf, size_t len) {
   return n;
 }
 
-#endif
+FILE*
+Popen(const char* command, const char* type) {
+  FILE* fd;
+  if((fd = popen(command, type)) == NULL)
+    myerr_sys("popen error");
+  return fd;
+}
+void
+Fputs(const char* str, FILE* stream) {
+  if(fputs(str, stream) == EOF)
+    myerr_sys("fputs error");
+}
+
+void
+Pclose(FILE* stream) {
+  if(pclose(stream) == -1)
+    myerr_sys("pclose error");
+}
+

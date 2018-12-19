@@ -1,3 +1,3 @@
 PROJECT(InterprocessCommunication)
-ADD_SUBDIRECTORY(pipe)
-ADD_SUBDIRECTORY(util)
+ADD_SUBDIRECTORY(pipe/)
+ADD_SUBDIRECTORY(util/)

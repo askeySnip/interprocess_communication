@@ -24,4 +24,13 @@ Write(int fd, const void* buf, size_t len);
 ssize_t
 Read(int fd, void* buf, size_t len);
 
+FILE*
+Popen(const char* command, const char* type);
+
+void
+Fputs(const char* str, FILE* stream);
+
+void
+Pclose(FILE* stream);
+
 #endif
